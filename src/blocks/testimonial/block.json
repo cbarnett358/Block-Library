@@ -1,0 +1,67 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "tk/tk-testimonial",
+	"version": "0.1.0",
+	"title": "Testimonial",
+	"category": "widgets",
+	"icon": "admin-users",
+	"description": "My first Gutenberg Block",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "tk-testimonial",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+  	"keywords": ["lir", "scotch", "review"],
+  	"attributes": {
+	  "quote" : {
+		"type": "string",
+		"source": "html",
+		"selector": ".quote"
+	  },
+
+	  "stars" : {
+		"type": "number",
+		"default": 5
+	  },
+
+	"author" : {
+	  "type": "string",
+	  "source": "text",
+	  "selector": ".author"
+	},
+
+	  "rating" : {
+		"type": "number",
+		"default": 5
+	  },
+	  "imgUrl" : {
+		"type": "string",
+		"default": "http://placehold.it/75"
+	  },
+	  "author" : {
+		"type": "string",
+		"source": "text",
+		"selector": ".author"
+	  },
+	  "location" : {
+		"type": "string",
+		"source": "text",
+		"selector": ".location"
+	  },
+	  "backgroundColor" : {
+		"type": "string"
+	  },
+	  "backgroundColorClass" : {
+		"type": "string"
+	  },
+	  "borderColor" : {
+		"type": "string"
+	  },
+	  "textColor" : {
+		"type": "string"
+	  }
+	}
+}
