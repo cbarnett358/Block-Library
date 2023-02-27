@@ -4,6 +4,7 @@ import {InspectorControls} from "@wordpress/block-editor";
 import {PanelBody, PanelRow, RangeControl, SelectControl, ColorPalette} from "@wordpress/components";
 import {addFilter} from '@wordpress/hooks';
 import {select} from "@wordpress/data";
+import "./editor.scss"
 import React from "react";
 
 // create a wrapper function which will receive the block we are trying to wrap
@@ -57,8 +58,9 @@ function blockWrapper(WrappedBlock) {
 
 								<PanelRow>
 									<RangeControl
-
+										className="my-range-control"
 										label="Width"
+										marks={true}
 										value={attributes.borderWidth}
 										onChange={borderWidth => setAttributes({borderWidth})}
 										step={0.5}
@@ -69,8 +71,10 @@ function blockWrapper(WrappedBlock) {
 								</PanelRow>
 								<PanelRow>
 									<RangeControl
-
 										label="Radius"
+										className="my-range-control"
+										marks={true}
+										width={100}
 										value={attributes.borderRadius}
 										onChange={borderRadius => setAttributes({borderRadius})}
 										step={1}
@@ -80,18 +84,6 @@ function blockWrapper(WrappedBlock) {
 									/>
 								</PanelRow>
 
-								<PanelRow>
-									<RangeControl
-
-										label="Width"
-										value={attributes.borderWidth}
-										onChange={borderWidth => setAttributes({borderWidth})}
-										step={0.5}
-										min={0.5}
-										max={5}
-
-									/>
-								</PanelRow>
 								<PanelRow>
 									<ColorPalette
 

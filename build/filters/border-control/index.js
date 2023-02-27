@@ -21,8 +21,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_hooks__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_hooks__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./editor.scss */ "./src/filters/border-control/editor.scss");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
+
 
 
 
@@ -37,7 +39,7 @@ __webpack_require__.r(__webpack_exports__);
 function blockWrapper(WrappedBlock) {
   // return a React component
 
-  return class extends (react__WEBPACK_IMPORTED_MODULE_6___default().Component) {
+  return class extends (react__WEBPACK_IMPORTED_MODULE_7___default().Component) {
     select() {
       return (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_5__.select)('core/editor').getEditorSettings();
     }
@@ -77,7 +79,9 @@ function blockWrapper(WrappedBlock) {
           value: 'dotted'
         }]
       })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
+        className: "my-range-control",
         label: "Width",
+        marks: true,
         value: attributes.borderWidth,
         onChange: borderWidth => setAttributes({
           borderWidth
@@ -87,6 +91,9 @@ function blockWrapper(WrappedBlock) {
         max: 5
       })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
         label: "Radius",
+        className: "my-range-control",
+        marks: true,
+        width: 100,
         value: attributes.borderRadius,
         onChange: borderRadius => setAttributes({
           borderRadius
@@ -94,15 +101,6 @@ function blockWrapper(WrappedBlock) {
         step: 1,
         min: 0,
         max: 10
-      })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-        label: "Width",
-        value: attributes.borderWidth,
-        onChange: borderWidth => setAttributes({
-          borderWidth
-        }),
-        step: 0.5,
-        min: 0.5,
-        max: 5
       })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ColorPalette, {
         colors: settings.colors,
         value: attributes.borderColor,
@@ -195,6 +193,18 @@ function addBorderAttributes(settings, name) {
   return settings;
 }
 (0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__.addFilter)('blocks.registerBlockType', 'cb-blocklibrary/border-control/add-border-attributes', addBorderAttributes);
+
+/***/ }),
+
+/***/ "./src/filters/border-control/editor.scss":
+/*!************************************************!*\
+  !*** ./src/filters/border-control/editor.scss ***!
+  \************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
 
 /***/ }),
 

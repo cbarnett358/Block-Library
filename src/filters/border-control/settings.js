@@ -6,16 +6,19 @@ function addBorderAttributes(settings, name) {
 
 	// append the settings
 	settings.attributes.borderStyle = {
+
 		type: 'string',
 		default: '',
 	}
 	settings.attributes.borderColor = {
 		type: 'string',
+
 		default: '',
 	}
 	settings.attributes.borderWidth = {
 		type: 'number',
 		default: 0,
+
 
 	}
 	settings.attributes.borderRadius = {
